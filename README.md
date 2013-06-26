@@ -46,3 +46,10 @@ Use 2 anchor tags to control the menu. Only one will be visible at a time as ng-
 ## Demo
 
 Check the `/demo` folder in the repository for a working demo.
+
+## Changelog
+
+### 0.1.1
+Remove horizontal scroll bars when menu is showing.
+### 0.1.0
+Initial release
