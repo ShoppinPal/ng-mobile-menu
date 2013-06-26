@@ -1,0 +1,30 @@
+{
+  "name": "ng-mobile-menu",
+  "version": "0.1.0",
+  "description": "An AngularJS module that provides a CSS slide out menu for mobile apps like the Facebook iOS app.",
+  "main": "Gruntfile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shoppinpal/ng-mobile-menu.git"
+  },
+  "keywords": [
+    "mobile",
+    "menu",
+    "css",
+    "navigation"
+  ],
+  "author": {
+    "name": "Jeff French"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/shoppinpal/ng-mobile-menu/blog/master/LICENSE"
+    }
+  ],
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-less": "~0.6.1"
+  }
+}

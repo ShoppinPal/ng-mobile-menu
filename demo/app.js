@@ -1,0 +1,1 @@
+angular.module('super-awesome-demo',['shoppinpal.ng-mobile-menu']);
