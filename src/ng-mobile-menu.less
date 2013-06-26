@@ -34,7 +34,7 @@
 
 #sp-nav:target {
   left:0px;
-
+  overflow-x: hidden;
 }
 
 #sp-nav:target + #sp-page #sp-show-menu {
@@ -48,4 +48,10 @@
 #sp-nav:target + #sp-page {
   position: absolute;
   left: @sp-nav-offset;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  overflow-x: hidden;
 }

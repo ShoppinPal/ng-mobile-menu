@@ -29,6 +29,7 @@
 }
 #sp-nav:target {
   left: 0px;
+  overflow-x: hidden;
 }
 #sp-nav:target + #sp-page #sp-show-menu {
   display: none;
@@ -39,4 +40,9 @@
 #sp-nav:target + #sp-page {
   position: absolute;
   left: 272px;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+body {
+  overflow-x: hidden;
 }
