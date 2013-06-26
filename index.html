@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Ng-mobile-menu by ShoppinPal</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/ShoppinPal/ng-mobile-menu">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/ShoppinPal/ng-mobile-menu/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/ShoppinPal/ng-mobile-menu/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Ng-mobile-menu</h1>
+          <p>An AngularJS module that provides a slide out menu for your application.</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/ShoppinPal">ShoppinPal</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Include the CSS and JS files:</p>
+
+<div class="highlight"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"ng-mobile-menu.min.css"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"your-custom-stylesheet.css"</span> <span class="nt">/&gt;</span>
+
+<span class="c">&lt;!-- ng-mobile-menu.js should be referenced after Angular and before your app --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"angular.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"ng-mobile-menu.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"your-angular-app.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+</pre></div>
+
+<p>Add <code>shoppinpal.ng-mobile-menu</code> as dependency in your app.</p>
+
+<div class="highlight"><pre><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'your-awesome-app'</span><span class="p">,[</span><span class="s1">'shoppinpal.ng-mobile-menu'</span><span class="p">]);</span>
+</pre></div>
+
+<p>Then you just need to structure your HTML like this:</p>
+
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"sp-nav"</span><span class="nt">&gt;</span>
+<span class="c">&lt;!-- put your menu in here --&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"sp-page"</span><span class="nt">&gt;</span>
+<span class="c">&lt;!-- put your page content in here --&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+<p>Use 2 anchor tags to control the menu. Only one will be visible at a time as ng-mobile-menu will hide and show them as needed based ont he menu state.</p>
+
+<div class="highlight"><pre><span class="c">&lt;!-- Notice that the href matches the id of the menu element --&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#sp-nav"</span> <span class="na">id=</span><span class="s">"sp-show-menu"</span><span class="nt">&gt;</span>Show<span class="nt">&lt;/a&gt;</span>
+<span class="c">&lt;!-- Notice tha the href of this anchor points to the page element --&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#sp-page"</span> <span class="na">id=</span><span class="s">"sp-hide-menu"</span><span class="nt">&gt;</span>Hide<span class="nt">&lt;/a&gt;</span>
+</pre></div>
+
+<h2>
+<a name="demo" class="anchor" href="#demo"><span class="octicon octicon-link"></span></a>Demo</h2>
+
+<p>Check out the demo <a href="https://shoppinpal.github.io/ng-mobile-menu/demo/index.html">here</a></p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
