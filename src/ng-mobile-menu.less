@@ -29,7 +29,10 @@
   height: 100%;
   float: right;
   z-index: 10;
-  transition: left 0.3s ease;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
 }
 
 #sp-nav:target {
@@ -47,7 +50,10 @@
 
 #sp-nav:target + #sp-page {
   position: absolute;
-  left: @sp-nav-offset;
+  -webkit-transform: translateX(272px);
+  transform: translateX(272px);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
 }
