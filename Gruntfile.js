@@ -24,7 +24,8 @@ module.exports = function(grunt) {
     less: {
       dist: {
           options: {
-              compress: true
+              compress: true,
+              banner: '<%= banner %>'
           },
           files: {
               "dist/ng-mobile-menu.min.css" : "src/ng-mobile-menu.less"
