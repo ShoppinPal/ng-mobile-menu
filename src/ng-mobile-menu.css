@@ -2,7 +2,7 @@
   display: none;
 }
 #sp-nav,
-#sp-nav-wide {
+#sp-nav.wide {
   width: 80%;
   overflow: hidden;
   position: absolute;
@@ -11,7 +11,7 @@
   height: 100%;
 }
 #sp-nav nav,
-#sp-nav-wide nav {
+#sp-nav.wide nav {
   display: block;
   background: black;
   color: white;
@@ -19,7 +19,7 @@
   height: 100%;
 }
 #sp-nav nav div,
-#sp-nav-wide nav div {
+#sp-nav.wide nav div {
   z-index: 5;
 }
 #sp-page {
@@ -34,20 +34,20 @@
   transition-duration: 0.3s;
 }
 #sp-nav:target,
-#sp-nav-wide:target {
+#sp-nav:target.wide {
   left: 0px;
   overflow-x: hidden;
 }
 #sp-nav:target + #sp-page #sp-show-menu,
-#sp-nav-wide:target + #sp-page #sp-show-menu {
+#sp-nav:target.wide + #sp-page #sp-show-menu {
   display: none;
 }
 #sp-nav:target + #sp-page #sp-hide-menu,
-#sp-nav-wide:target + #sp-page #sp-hide-menu {
+#sp-nav:target.wide + #sp-page #sp-hide-menu {
   display: inline;
 }
 #sp-nav:target + #sp-page,
-#sp-nav-wide:target + #sp-page {
+#sp-nav:target.wide + #sp-page {
   position: absolute;
   -webkit-transform: translateX(80%);
   transform: translateX(80%);

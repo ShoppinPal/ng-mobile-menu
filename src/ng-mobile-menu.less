@@ -5,7 +5,7 @@
   display: none;
 }
 
-#sp-nav, #sp-nav-wide {
+#sp-nav, #sp-nav.wide {
   width: @sp-nav-offset;
   overflow: hidden;
   position: absolute;
@@ -36,20 +36,20 @@
   transition-duration: 0.3s;
 }
 
-#sp-nav:target, #sp-nav-wide:target {
+#sp-nav:target, #sp-nav:target.wide {
   left:0px;
   overflow-x: hidden;
 }
 
-#sp-nav:target + #sp-page #sp-show-menu, #sp-nav-wide:target + #sp-page #sp-show-menu {
+#sp-nav:target + #sp-page #sp-show-menu, #sp-nav:target.wide + #sp-page #sp-show-menu {
   display: none;
 }
 
-#sp-nav:target + #sp-page #sp-hide-menu, #sp-nav-wide:target + #sp-page #sp-hide-menu {
+#sp-nav:target + #sp-page #sp-hide-menu, #sp-nav:target.wide + #sp-page #sp-hide-menu {
   display: inline;
 }
 
-#sp-nav:target + #sp-page, #sp-nav-wide:target + #sp-page {
+#sp-nav:target + #sp-page, #sp-nav:target.wide + #sp-page {
   position: absolute;
   -webkit-transform: translateX(@sp-nav-offset);
   transform: translateX(@sp-nav-offset);
