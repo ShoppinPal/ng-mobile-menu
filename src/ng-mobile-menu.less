@@ -1,10 +1,11 @@
-@sp-nav-offset: 272px;
+@sp-nav-offset: 80%;
+@sp-nav-offset-skinny: 20%;
 
 #sp-hide-menu {
   display: none;
 }
 
-#sp-nav {
+#sp-nav, #sp-nav-wide {
   width: @sp-nav-offset;
   overflow: hidden;
   position: absolute;
@@ -35,23 +36,23 @@
   transition-duration: 0.3s;
 }
 
-#sp-nav:target {
+#sp-nav:target, #sp-nav-wide:target {
   left:0px;
   overflow-x: hidden;
 }
 
-#sp-nav:target + #sp-page #sp-show-menu {
+#sp-nav:target + #sp-page #sp-show-menu, #sp-nav-wide:target + #sp-page #sp-show-menu {
   display: none;
 }
 
-#sp-nav:target + #sp-page #sp-hide-menu {
+#sp-nav:target + #sp-page #sp-hide-menu, #sp-nav-wide:target + #sp-page #sp-hide-menu {
   display: inline;
 }
 
-#sp-nav:target + #sp-page {
+#sp-nav:target + #sp-page, #sp-nav-wide:target + #sp-page {
   position: absolute;
-  -webkit-transform: translateX(272px);
-  transform: translateX(272px);
+  -webkit-transform: translateX(@sp-nav-offset);
+  transform: translateX(@sp-nav-offset);
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   overflow-x: hidden;
@@ -60,4 +61,14 @@
 
 body {
   overflow-x: hidden;
+}
+
+@media (min-width:900px){
+  #sp-nav{
+    width: @sp-nav-offset-skinny;
+  }
+  #sp-nav:target + #sp-page {
+    -webkit-transform: translateX(@sp-nav-offset-skinny);
+    transform: translateX(@sp-nav-offset-skinny);
+  }
 }
