@@ -1,4 +1,4 @@
-@sp-nav-offset: 272px;
+@sp-nav-offset: 80%;
 
 #sp-hide-menu {
   display: none;
@@ -50,8 +50,8 @@
 
 #sp-nav:target + #sp-page {
   position: absolute;
-  -webkit-transform: translateX(272px);
-  transform: translateX(272px);
+  -webkit-transform: translateX(@sp-nav-offset);
+  transform: translateX(@sp-nav-offset);
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   overflow-x: hidden;
