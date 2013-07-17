@@ -1,12 +1,27 @@
 angular.module('shoppinpal.mobile-menu', [])
-    .run(['$rootScope', function($rootScope){
-        console.log($rootScope);
-        $rootScope.$on("$locationChangeStart", function(scope, future, current){
-            if(future.indexOf('#sp-nav', future.length - '#sp-nav'.length) !== -1){
-                scope.preventDefault();
-            }
-            if(future.indexOf('#sp-page', future.length - '#sp-page'.length) !== -1){
-                scope.preventDefault();
-            }
-        });
-    }]);
+    .run(['$rootScope', '$spMenu', function($rootScope, $spMenu){
+        $rootScope.$spMenu = $spMenu;
+    }])
+    .provider("$spMenu", function(){
+        this.$get = [function(){
+           var menu = {};
+
+           menu.show = function show(){
+               var menu = angular.element(document.querySelector('#sp-nav'));
+               console.log(menu);
+               menu.addClass('show');
+           };
+
+           menu.hide = function hide(){
+               var menu = angular.element(document.querySelector('#sp-nav'));
+               menu.removeClass('show');
+           };
+
+           menu.toggle = function toggle() {
+               var menu = angular.element(document.querySelector('#sp-nav'));
+               menu.toggleClass('show');
+           };
+
+           return menu;
+        }];
+    });

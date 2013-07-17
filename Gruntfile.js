@@ -1,6 +1,9 @@
 /*global module:false*/
 module.exports = function(grunt) {
 
+  // Load Grunt tasks declared in the package.json file
+  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+
   // Project configuration.
   grunt.initConfig({
     // Metadata.
@@ -17,7 +20,8 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-            'dist/ng-mobile-menu.min.js' : ['src/ng-mobile-menu.js']
+            'dist/ng-mobile-menu.min.js' : ['src/ng-mobile-menu.js'],
+            'demo/ng-mobile-menu.min.js' : ['src/ng-mobile-menu.js']
         }
       }
     },
@@ -28,15 +32,51 @@ module.exports = function(grunt) {
               banner: '<%= banner %>'
           },
           files: {
-              "dist/ng-mobile-menu.min.css" : "src/ng-mobile-menu.less"
+              "dist/ng-mobile-menu.min.css" : "src/ng-mobile-menu.less",
+              "demo/ng-mobile-menu.min.css" : "src/ng-mobile-menu.less"
           }
       }
+    },
+    connect: {
+        all: {
+            options: {
+                port: 9005,
+                hostname: "0.0.0.0",
+                base: 'demo',
+                middleware: function(connect, options){
+                    return [
+                        require('grunt-contrib-livereload/lib/utils').livereloadSnippet,
+                        connect.static(options.base),
+                        connect.static('dist')
+                    ];
+                }
+            }
+        }
+    },
+    open: {
+        all: {
+            path: 'http://localhost:<%= connect.all.options.port%>'
+        }
+    },
+    regarde: {
+        all: {
+            files: [
+                'demo/*.html',
+                'demo/*.js',
+                'src/*.js',
+                'src/*.less'
+            ],
+            tasks: [
+                'uglify',
+                'less',
+                'livereload'
+            ]
+        }
     }
   });
 
-  // These plugins provide necessary tasks.
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-less');
+  // Server task
+  grunt.registerTask('server', ['uglify', 'less', 'livereload-start', 'connect', 'open', 'regarde' ]);
 
   // Default task.
   grunt.registerTask('default', ['uglify', 'less']);

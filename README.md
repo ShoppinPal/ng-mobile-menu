@@ -11,15 +11,15 @@ Include the CSS and JS files:
 
 <!-- ng-mobile-menu.js should be referenced after Angular and before your app -->
 <script type="text/javascript" src="angular.js"></script>
-<script type="text/javascript" src="ng-mobile-menu.js"></script>
+<script type="text/javascript" src="ng-mobile-menu.min.js"></script>
 <script type="text/javascript" src="your-angular-app.js"></script>
 
 ```
 
-Add `shoppinpal.ng-mobile-menu` as dependency in your app.
+Add `shoppinpal.mobile-menu` as dependency in your app.
 
 ```javascript
-angular.module('your-awesome-app',['shoppinpal.ng-mobile-menu']);
+angular.module('your-awesome-app',['shoppinpal.mobile-menu']);
 ```
 
 Then you just need to structure your HTML like this:
@@ -34,13 +34,10 @@ Then you just need to structure your HTML like this:
 </div>
 ```
 
-Use 2 anchor tags to control the menu. Only one will be visible at a time as ng-mobile-menu will hide and show them as needed based ont he menu state.
+Hide and show the menu in an ngClick like this `ng-click="$spMenu.toggle()"`. (`.show()` and `.hide()` are also available if you need them)
 
 ```html
-<!-- Notice that the href matches the id of the menu element -->
-<a href="#sp-nav" id="sp-show-menu">Show</a>
-<!-- Notice tha the href of this anchor points to the page element -->
-<a href="#sp-page" id="sp-hide-menu">Hide</a>
+<button ng-click="$spMenu.toggle()">Menu</button>
 ```
 
 ## Demo
@@ -48,7 +45,15 @@ Use 2 anchor tags to control the menu. Only one will be visible at a time as ng-
 Check the `/demo` folder in the repository for a working demo.
 
 ## Changelog
-
+### 0.2.0
+#### Breaking Changes
+No longer using href targets to show and hide menu. Now you _must_ use the new `$spMenu` provider to show and hide the menu.
+### 0.1.3
+* Issue #2 : Change menu to use 80% width for more consistent appearance across mobile device resolutions.
+ * On larger screens (tablets, desktops) default width will be 20% for menu
+* Issue #1: Add support for #sp-nav.wide which will always use a width of 80% regardless of screen size. Just add class="wide" to your sp-nav element.
+### 0.1.2
+Use hardware accelerated CSS transitions.
 ### 0.1.1
 Remove horizontal scroll bars when menu is showing.
 ### 0.1.0

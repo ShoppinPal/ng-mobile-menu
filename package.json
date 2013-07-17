@@ -1,6 +1,6 @@
 {
   "name": "ng-mobile-menu",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "An AngularJS module that provides a CSS slide out menu for mobile apps like the Facebook iOS app.",
   "main": "Gruntfile.js",
   "repository": {
@@ -25,6 +25,11 @@
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-uglify": "~0.2.2",
-    "grunt-contrib-less": "~0.6.1"
+    "grunt-contrib-less": "~0.6.1",
+    "matchdep": "~0.1.2",
+    "grunt-regarde": "~0.1.1",
+    "grunt-contrib-livereload": "~0.1.2",
+    "grunt-contrib-connect": "~0.3.0",
+    "grunt-open": "~0.2.1"
   }
 }
