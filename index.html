@@ -39,9 +39,12 @@
         </div>
 
         <h2>
-<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+<a name="ng-mobile-menu" class="anchor" href="#ng-mobile-menu"><span class="octicon octicon-link"></span></a>ng-mobile-menu</h2>
 
-<p>Download the CSS and JS files <a href="http://github.com/ShoppinPal/ng-mobile-menu/releases/v0.1.2/1948/MobileMenu-v0.1.2.zip">here</a>.</p>
+<p>An AngularJS module that provides a slide out menu for your application.</p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
 
 <p>Include the CSS and JS files:</p>
 
@@ -50,14 +53,14 @@
 
 <span class="c">&lt;!-- ng-mobile-menu.js should be referenced after Angular and before your app --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"angular.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"ng-mobile-menu.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"ng-mobile-menu.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"your-angular-app.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 </pre></div>
 
-<p>Add <code>shoppinpal.ng-mobile-menu</code> as dependency in your app.</p>
+<p>Add <code>shoppinpal.mobile-menu</code> as dependency in your app.</p>
 
-<div class="highlight"><pre><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'your-awesome-app'</span><span class="p">,[</span><span class="s1">'shoppinpal.ng-mobile-menu'</span><span class="p">]);</span>
+<div class="highlight"><pre><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'your-awesome-app'</span><span class="p">,[</span><span class="s1">'shoppinpal.mobile-menu'</span><span class="p">]);</span>
 </pre></div>
 
 <p>Then you just need to structure your HTML like this:</p>
@@ -71,18 +74,45 @@
 <span class="nt">&lt;/div&gt;</span>
 </pre></div>
 
-<p>Use 2 anchor tags to control the menu. Only one will be visible at a time as ng-mobile-menu will hide and show them as needed based ont he menu state.</p>
+<p>Hide and show the menu in an ngClick like this <code>ng-click="$spMenu.toggle()"</code>. (<code>.show()</code> and <code>.hide()</code> are also available if you need them)</p>
 
-<div class="highlight"><pre><span class="c">&lt;!-- Notice that the href matches the id of the menu element --&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#sp-nav"</span> <span class="na">id=</span><span class="s">"sp-show-menu"</span><span class="nt">&gt;</span>Show<span class="nt">&lt;/a&gt;</span>
-<span class="c">&lt;!-- Notice tha the href of this anchor points to the page element --&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#sp-page"</span> <span class="na">id=</span><span class="s">"sp-hide-menu"</span><span class="nt">&gt;</span>Hide<span class="nt">&lt;/a&gt;</span>
+<div class="highlight"><pre><span class="nt">&lt;button</span> <span class="na">ng-click=</span><span class="s">"$spMenu.toggle()"</span><span class="nt">&gt;</span>Menu<span class="nt">&lt;/button&gt;</span>
 </pre></div>
 
 <h2>
 <a name="demo" class="anchor" href="#demo"><span class="octicon octicon-link"></span></a>Demo</h2>
 
-<p>Check out the demo <a href="http://shoppinpal.github.io/ng-mobile-menu/demo/index.html">here</a></p>
+<p>Check out the <a href="demo/index.html">demo</a></p>
+
+<h2>
+<a name="changelog" class="anchor" href="#changelog"><span class="octicon octicon-link"></span></a>Changelog</h2>
+
+<h3>
+<a name="020" class="anchor" href="#020"><span class="octicon octicon-link"></span></a>0.2.0</h3>
+
+<h4>
+<a name="breaking-changes" class="anchor" href="#breaking-changes"><span class="octicon octicon-link"></span></a>Breaking Changes</h4>
+
+<p>No longer using href targets to show and hide menu. Now you <em>must</em> use the new <code>$spMenu</code> provider to show and hide the menu.</p>
+
+<h3>
+<a name="013" class="anchor" href="#013"><span class="octicon octicon-link"></span></a>0.1.3</h3>
+
+<ul>
+<li>Issue #2 : Change menu to use 80% width for more consistent appearance across mobile device resolutions.
+
+<ul>
+<li>On larger screens (tablets, desktops) default width will be 20% for menu</li>
+</ul>
+</li>
+<li>Issue #1: Add support for #sp-nav.wide which will always use a width of 80% regardless of screen size. Just add class="wide" to your sp-nav element.
+### 0.1.2
+Use hardware accelerated CSS transitions.
+### 0.1.1
+Remove horizontal scroll bars when menu is showing.
+### 0.1.0
+Initial release</li>
+</ul>
       </section>
 
     </div>
