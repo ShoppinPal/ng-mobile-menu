@@ -1,6 +1,6 @@
 {
   "name": "ng-mobile-menu",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "An AngularJS module that provides a CSS slide out menu for mobile apps like the Facebook iOS app.",
   "main": "Gruntfile.js",
   "repository": {

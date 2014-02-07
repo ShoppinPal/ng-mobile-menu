@@ -1,0 +1,6 @@
+{
+  "name": "ng-mobile-menu",
+  "version": "0.2.1",
+  "main": "dist/ng-mobile-menu.js",
+  "description": "An AngularJS module that provides a CSS slide out menu for mobile apps like the Facebook iOS app."
+}
