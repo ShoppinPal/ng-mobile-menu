@@ -1,3 +1,6 @@
+# DEPRECATED
+As an alternative, please consider using https://github.com/dpiccone/ng-pageslide instead
+
 ## ng-mobile-menu
 
 An AngularJS module that provides a slide out menu for your application.
